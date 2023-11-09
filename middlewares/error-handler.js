@@ -2,8 +2,7 @@ const {
   CustomAPIError,
 } = require('../errors/custom-error');
 
-//
-const errorHandler = (err, req, res, next) => {
+module.exports = (err, req, res, next) => {
   if (err instanceof CustomAPIError) {
     return res.status(err.statusCode).json({
       message: err.message,
@@ -14,5 +13,3 @@ const errorHandler = (err, req, res, next) => {
       'Somthing went wrong, please try again...',
   });
 };
-
-module.exports = errorHandler;
