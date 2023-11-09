@@ -17,8 +17,8 @@ const taskSchema = new mongoose.Schema(
     },
   },
   {
-    // toObject: true,
-    // toJSON: true,
+    toObject: true,
+    toJSON: true,
     timestamps: true,
   }
 );
